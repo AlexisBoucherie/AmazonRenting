@@ -45,6 +45,6 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('New company', 'fa fa-plus', Company::class)->setAction(Crud::PAGE_NEW),
         ]);
 
-        yield MenuItem::linkToUrl("Leave administration", "fa-solid fa-arrow-right-from-bracket", '/');
+        yield MenuItem::linkToUrl("Leave administration", "fa-solid fa-arrow-right-from-bracket", '/home');
     }
 }
