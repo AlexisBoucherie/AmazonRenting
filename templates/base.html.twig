@@ -76,7 +76,6 @@
 </div>
 <!-- preloader - end -->
 
-
 <!-- header_section - start -->
 <header class="header_section secondary_header sticky text-white clearfix">
     <div class="header_top clearfix">
@@ -88,7 +87,6 @@
                         <li><i class="fal fa-phone"></i> +33-123-456-7890</li>
                     </ul>
                 </div>
-
                 <div class="col-lg-5">
                     <ul class="primary_social_links ul_li_right clearfix">
                         <li><a href="https://www.facebook.com/Amazon"><i class="fab fa-facebook-f"></i></a></li>
@@ -101,11 +99,9 @@
             </div>
         </div>
     </div>
-
     <div class="header_bottom clearfix">
         <div class="container">
             <div class="row align-items-center">
-
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                     <div class="brand_logo">
                         <a href="{{ path('app_home') }}">
@@ -116,16 +112,8 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 order-last">
                     <ul class="header_action_btns ul_li_right clearfix">
-                        <li>
-                            <button type="button" class="search_btn" data-toggle="collapse"
-                                    data-target="#collapse_search_body" aria-expanded="false"
-                                    aria-controls="collapse_search_body">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </li>
                         <li class="dropdown">
                             <button type="button" class="user_btn" id="user_dropdown" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
@@ -134,7 +122,6 @@
                             <div class="user_dropdown rotors_dropdown dropdown-menu clearfix"
                                  aria-labelledby="user_dropdown">
                                 <div class="profile_info clearfix">
-
                                     {# si l'utilisateur est connecté #}
                                     {% if app.user %}
                                         <div class="user_content">
@@ -180,7 +167,6 @@
                                     <li><a href="{{ path('app_home') }}">Home Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="gallery.html">Our Cars</a></li>
                             <li><a href="about.html">About</a></li>
                             <li class="has_child">
                                 <a href="#!">Pages</a>
@@ -260,12 +246,6 @@
                                 <li><a href="#!"><i class="fa fa-angle-right"></i> Rental Information</a></li>
                                 <li><a href="#!"><i class="fa fa-angle-right"></i> F.A.Q.</a></li>
                             </ul>
-                        </div>
-                        <div class="form_item mb-0">
-                            <form action="#">
-                                <input id="footer_search" type="search" name="search" placeholder="Search">
-                                <label for="footer_search" class="input_icon"><i class="fa fa-search"></i></label>
-                            </form>
                         </div>
                     </div>
                 </div>
