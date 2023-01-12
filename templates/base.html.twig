@@ -79,35 +79,13 @@
     <!-- header_section - start
     ================================================== -->
     <header class="header_section secondary_header sticky text-white clearfix">
-        <div class="header_top clearfix">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <ul class="header_contact_info ul_li clearfix">
-                            <li><i class="fal fa-envelope"></i> rotorsmail@email.com</li>
-                            <li><i class="fal fa-phone"></i> +1-202-555-0156</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-5">
-                        <ul class="primary_social_links ul_li_right clearfix">
-                            <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="header_bottom clearfix">
             <div class="container">
                 <div class="row align-items-center">
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                         <div class="brand_logo">
-                            <a href="index.html">
+                            <a href="{{ path('app_home') }}">
                                 <img src="{{ asset('images/about/img_01.jpg') }}"
                                      srcset="{{ asset('images/logo/logo_01_2x.png') }}" alt="logo_not_found">
                                 <img src="{{ asset('images/logo/logo_02_1x.png') }}"
@@ -124,62 +102,6 @@
                                         aria-controls="collapse_search_body">
                                     <i class="fa fa-search"></i>
                                 </button>
-                            </li>
-                            <li class="dropdown">
-                                <button type="button" class="cart_btn" id="cart_dropdown" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span class="cart_counter bg_default_red">3</span>
-                                </button>
-                                <div class="cart_dropdown rotors_dropdown dropdown-menu"
-                                     aria-labelledby="cart_dropdown">
-                                    <h4 class="wrap_title">Cart Items: (3)</h4>
-                                    <ul class="cart_items_list ul_li_block clearfix">
-                                        <li>
-                                            <div class="item_image">
-                                                <img src="{{ asset('images/cart/img_2.png') }}" alt="image_not_found">
-                                            </div>
-                                            <div class="item_content">
-                                                <h4 class="item_title">Digital Infrared Thermometer</h4>
-                                                <span class="item_price">$39.50</span>
-                                            </div>
-                                            <button type="button" class="remove_btn"><i class="fa fa-times"></i>
-                                            </button>
-                                        </li>
-
-                                        <li>
-                                            <div class="item_image">
-                                                <img src="{{ asset('images/cart/img_2.png') }}" alt="image_not_found">
-                                            </div>
-                                            <div class="item_content">
-                                                <h4 class="item_title">Digital Infrared Thermometer</h4>
-                                                <span class="item_price">$39.50</span>
-                                            </div>
-                                            <button type="button" class="remove_btn"><i class="fa fa-times"></i>
-                                            </button>
-                                        </li>
-
-                                        <li>
-                                            <div class="item_image">
-                                                <img src="{{ asset('images/cart/img_2.png') }}" alt="image_not_found">
-                                            </div>
-                                            <div class="item_content">
-                                                <h4 class="item_title">Digital Infrared Thermometer</h4>
-                                                <span class="item_price">$39.50</span>
-                                            </div>
-                                            <button type="button" class="remove_btn"><i class="fa fa-times"></i>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                    <ul class="btns_group ul_li_block clearfix">
-                                        <li><a href="cart.html" class="custom_btn bg_default_red text-uppercase">View
-                                                Cart <img src="{{ asset('images/icons/icon_01.png') }}"
-                                                          alt="icon_not_found"></a></li>
-                                        <li><a href="#!" class="custom_btn bg_default_black text-uppercase">Checkout
-                                                <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </li>
                             <li class="dropdown">
                                 <button type="button" class="user_btn" id="user_dropdown" data-toggle="dropdown"
@@ -221,7 +143,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="gallery.html">Our Cars</a></li>
-                                <li><a href="review.html">Reviews</a></li>
+{#                                <li><a href="review.html">Reviews</a></li>#}
                                 <li><a href="about.html">About</a></li>
                                 <li class="has_child">
                                     <a href="#!">Pages</a>
