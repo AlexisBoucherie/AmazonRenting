@@ -17,7 +17,7 @@
 
                 <div class="about_content mb_60">
                     <div class="brand_logo mb_15">
-                        <a href="index.html">
+                        <a href="{{ path('app_home') }}">
                             <img src="{{ asset('images/logo/logo_01_1x.png') }}"
                                  srcset=" {{ asset('images/logo/logo_01_2x.png') }}" alt="logo_not_found">
                         </a>
@@ -117,9 +117,9 @@
         ================================================== -->
         <section class="slider_section text-white text-center position-relative clearfix">
             <div class="main_slider clearfix">
-                {% for car in cars|slice(0,3) %}
+                {% for car in carSport|slice(0,4) %}
                     <div class="item has_overlay d-flex align-items-center"
-                         data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
+                         data-bg-image="{{ asset('images/upload_vehicle/'~car.photo) }}">
                         <div class="overlay"></div>
                         <div class="container">
                             <div class="row justify-content-center">
@@ -232,19 +232,19 @@
                         <button class="button active" data-filter="*">All</button>
                     </li>
                     <li>
-                        <button class="button" data-filter=".sedan">Sedan</button>
+                        <button class="button" data-filter=".berline">Sedan</button>
                     </li>
                     <li>
-                        <button class="button" data-filter=".luxury">SUV</button>
+                        <button class="button" data-filter=".SUV">SUV</button>
                     </li>
                     <li>
-                        <button class="button" data-filter=".sports">Sports</button>
+                        <button class="button" data-filter=".sportive">Sports</button>
                     </li>
                 </ul>
 
                 <div class="feature_vehicle_filter element-grid clearfix">
                     {% for car in cars %}
-                            <div class="element-item {{ classType }}" data-category="{{ car.type }}">
+                            <div class="element-item {{ car.type }}" data-category="{{ car.type }}">
                                 <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="100">
                                     <h3 class="item_title mb-0">
                                         <a href="#!">
@@ -253,7 +253,8 @@
                                     </h3>
                                     <div class="item_image position-relative">
                                         <a class="image_wrap" href="#!">
-                                            <img src="{{ asset('images/feature/img_01.jpg') }}" alt="image_not_found">
+                                            <img src="{{ asset('images/upload_vehicle/'~car.photo) }}"
+                                                 alt="image_not_found" style="width: 345px; height: 260px ">
                                         </a>
                                         <span class="item_price bg_default_blue">{{ car.price }} $</span>
                                     </div>
@@ -285,7 +286,7 @@
 
                 <div class="section_title mb_30 text-center" data-aos="fade-up" data-aos-delay="100">
                     <h2 class="title_text text-white mb-0">
-                        <span>Why Usd</span>
+                        <span>Why Us</span>
                     </h2>
                 </div>
 
@@ -365,41 +366,20 @@
 
                 <div class="feature_carousel_wrap position-relative clearfix">
                     <div class="slideshow1_slider" data-aos="fade-up" data-aos-delay="100">
-                        <div class="item">
-                            <div class="feature_fullimage">
-                                <img src="{{ asset('images/feature/img_07.jpg') }}" alt="image_not_found">
-                                <div class="item_content text-white">
-                                    <span class="item_price bg_default_blue">$670/Day</span>
-                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray </h3>
-                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img
-                                                src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
+                        {% for car in carUtility|slice(0,2) %}
+                            <div class="item">
+                                <div class="feature_fullimage">
+                                    <img src="{{ asset('images/upload_vehicle/'~car.photo) }}"
+                                         style="width: 1100px; height: auto" alt="image_not_found">
+                                    <div class="item_content text-white">
+                                        <span class="item_price bg_default_blue">{{ car.price }} $</span>
+                                        <h3 class="item_title text-white">{{ car.brand|capitalize}} {{ car.model|capitalize }}</h3>
+                                        <a class="text_btn text-uppercase" href="#!"><span>Book A Car</span> <img
+                                                    src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="feature_fullimage">
-                                <img src="{{ asset('images/feature/img_07.jpg') }}" alt="image_not_found">
-                                <div class="item_content text-white">
-                                    <span class="item_price bg_default_blue">$670/Day</span>
-                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray </h3>
-                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img
-                                                src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="feature_fullimage">
-                                <img src="{{ asset('images/feature/img_07.jpg') }}" alt="image_not_found">
-                                <div class="item_content text-white">
-                                    <span class="item_price bg_default_blue">$670/Day</span>
-                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray </h3>
-                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img
-                                                src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
 
                     <div class="carousel_nav">
@@ -413,10 +393,8 @@
         <!-- service_section - end
         ================================================== -->
 
-
         <hr class="m-0" data-aos="fade-up" data-aos-delay="100">
-
-
+        
         <!-- testimonial_section - start
         ================================================== -->
         <section class="testimonial_section sec_ptb_150 clearfix">
