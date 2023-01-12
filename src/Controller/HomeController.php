@@ -38,8 +38,12 @@ class HomeController extends AbstractController
 
             ]);
         }
+        $carSport = $vehicleRepository->findBy(['type' => 'sportive']);
+        $carUtility = $vehicleRepository->findBy(['type' => 'utilitaire']);
         return $this->render('home/index.html.twig', [
             'cars' => $cars,
+            'carSport' => $carSport,
+            'carUtility' => $carUtility,
             'controller_name' => 'HomeController',
             'form' => $form->createView(),
         ]);
