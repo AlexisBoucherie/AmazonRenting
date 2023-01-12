@@ -39,7 +39,7 @@ class User
     private ?string $city = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $phoneNumber = null;
+    private ?string $phoneNumber = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $roles = null;
@@ -141,12 +141,12 @@ class User
         return $this;
     }
 
-    public function getPhoneNumber(): ?int
+    public function getPhoneNumber(): ?string
     {
         return $this->phoneNumber;
     }
 
-    public function setPhoneNumber(?int $phoneNumber): self
+    public function setPhoneNumber(?string $phoneNumber): self
     {
         $this->phoneNumber = $phoneNumber;
 
