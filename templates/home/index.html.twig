@@ -201,47 +201,7 @@
 
         <!-- search_section - start
         ================================================== -->
-        <section class="search_section clearfix">
-            <div class="container">
-                <div class="advance_search_form2" data-bg-color="#161829" data-aos="fade-up" data-aos-delay="100">
-                    <form action="#">
-                        <div class="row align-items-end">
-                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                <div class="form_item">
-                                    <h4 class="input_title text-white">Pick Up Location</h4>
-                                    <div class="position-relative">
-                                        <input id="location_two" type="text" name="location"
-                                               placeholder="City, State or Airport Code">
-                                        <label for="location_two" class="input_icon"><i
-                                                    class="fas fa-map-marker-alt"></i></label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                <div class="form_item">
-                                    <h4 class="input_title text-white">Pick A Date</h4>
-                                    <input type="date" name="date">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                <div class="price-range-area clearfix">
-                                    <h4 class="input_title text-white">Price</h4>
-                                    <div id="slider-range" class="slider-range clearfix"></div>
-                                    <input class="price-text" type="text" id="amount" readonly>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                <button type="submit" class="custom_btn bg_default_red text-uppercase">Find A Car <img
-                                            src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
+  {% include 'searchLocationDate.html.twig' %}
         <!-- search_section - end
         ================================================== -->
 

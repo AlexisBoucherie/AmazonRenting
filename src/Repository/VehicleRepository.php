@@ -39,6 +39,14 @@ class VehicleRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAvailableVehicle($date, $mibPrice, $maxPrice, $location)
+    {
+        foreach ($this->findAll() as $vehicle) {
+            $vehicle->getEvents();
+    }
+
+    }
+
 //    /**
 //     * @return Vehicle[] Returns an array of Vehicle objects
 //     */
