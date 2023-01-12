@@ -35,8 +35,7 @@
                         <li class="active dropdown">
                             <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
                             <ul class="dropdown-menu">
-                                <li><a href="index_1.html">Home Page V.1</a></li>
-                                <li><a href="index_2.html">Home Page V.2</a></li>
+                                <li><a href="{{ path('app_home') }}">Home Page</a></li>
                             </ul>
                         </li>
                         <li><a href="gallery.html">Our Cars</a></li>
@@ -117,77 +116,38 @@
         ================================================== -->
         <section class="slider_section text-white text-center position-relative clearfix">
             <div class="main_slider clearfix">
-                <div class="item has_overlay d-flex align-items-center"
-                     data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
-                    <div class="overlay"></div>
-                    <div class="container">
+                {% for car in cars|slice(0,3) %}
+                    <div class="item has_overlay d-flex align-items-center"
+                         data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
 
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="slider_content text-center">
-                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">
-                                        Lamborghini Aventador LP700-4</h3>
-                                    <p data-animation="fadeInUp" data-delay=".5s">
-                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color:
-                                        Black
-                                    </p>
-                                    <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
-                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now
-                                            <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
+                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                    <div class="slider_content text-center">
+                                        <h3 class="text-white text-uppercase" data-animation="fadeInUp"
+                                            data-delay=".3s">
+                                            {{ car.brand|capitalize }} {{ car.model|capitalize }}</h3>
+                                        <p data-animation="fadeInUp" data-delay=".5s">
+                                            {{ car.numberOfSeats }} passengers, {{ car.transmission|capitalize }}, Fuel
+                                            Type:
+                                            {{ car.energy }},
+                                            Color:
+                                            {{ car.color }}
+                                        </p>
+                                        <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
+                                            <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book
+                                                Now
+                                                <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
-                </div>
-
-                <div class="item has_overlay d-flex align-items-center"
-                     data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
-                    <div class="overlay"></div>
-                    <div class="container">
-
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="slider_content text-center">
-                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">
-                                        Lamborghini Aventador LP700-4</h3>
-                                    <p data-animation="fadeInUp" data-delay=".5s">
-                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color:
-                                        Black
-                                    </p>
-                                    <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
-                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now
-                                            <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item has_overlay d-flex align-items-center"
-                     data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
-                    <div class="overlay"></div>
-                    <div class="container">
-
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="slider_content text-center">
-                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">
-                                        Lamborghini Aventador LP700-4</h3>
-                                    <p data-animation="fadeInUp" data-delay=".5s">
-                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color:
-                                        Black
-                                    </p>
-                                    <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
-                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now
-                                            <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
             <div class="carousel_nav clearfix">
@@ -234,152 +194,42 @@
                         <button class="button" data-filter=".sedan">Sedan</button>
                     </li>
                     <li>
-                        <button class="button" data-filter=".sports">Sports</button>
+                        <button class="button" data-filter=".luxury">SUV</button>
                     </li>
                     <li>
-                        <button class="button" data-filter=".luxury">Luxury</button>
+                        <button class="button" data-filter=".sports">Sports</button>
                     </li>
                 </ul>
 
                 <div class="feature_vehicle_filter element-grid clearfix">
-                    <div class="element-item sedan " data-category="sedan">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="100">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2015 Chevrolet Corvette Stingray Z51
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_01.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$230/Day</span>
+                    {% for car in cars %}
+                            <div class="element-item {{ classType }}" data-category="{{ car.type }}">
+                                <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="100">
+                                    <h3 class="item_title mb-0">
+                                        <a href="#!">
+                                            {{ car.brand|capitalize }} {{ car.model|capitalize }}
+                                        </a>
+                                    </h3>
+                                    <div class="item_image position-relative">
+                                        <a class="image_wrap" href="#!">
+                                            <img src="{{ asset('images/feature/img_01.jpg') }}" alt="image_not_found">
+                                        </a>
+                                        <span class="item_price bg_default_blue">{{ car.price }} $</span>
+                                    </div>
+                                    <ul class="info_list ul_li_center clearfix">
+                                        <li>{{ car.type|capitalize }}</li>
+                                        <li>{{ car.transmission|capitalize }}</li>
+                                        <li>{{ car.numberOfSeats }} PAX</li>
+                                        <li>{{ car.energy|capitalize }}</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Gasoline</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item sports " data-category="sports">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="300">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2019 Chevrolet Corvette Stingray Red
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_02.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$230/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Hybrid</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item luxury " data-category="luxury">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="500">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2015 Chevrolet Corvette Stingray Z51
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_03.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$120/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Gasoline</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item sedan " data-category="sedan">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="100">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2020 Audi New Generation P00234
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_04.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$230/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Electro</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item sports " data-category="sports">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="300">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2015 Chevrolet Corvette Stingray Z51
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_05.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$160/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Gasoline</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item luxury " data-category="luxury">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="500">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2015 Chevrolet Corvette Stingray Z51
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_06.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$230/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Hybrid</li>
-                            </ul>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-
                 <div class="abtn_wrap text-center clearfix" data-aos="fade-up" data-aos-delay="100">
                     <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book A Car <img
                                 src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
                 </div>
-
             </div>
         </section>
         <!-- feature_section - end
