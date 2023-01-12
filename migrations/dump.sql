@@ -1,5 +1,5 @@
 INSERT INTO vehicle (brand, model, number_of_doors,
-                     number_of_seat, energy, volume,
+                     number_of_seats, energy, volume,
                      transmission, color, licence_required, type, register_plate)
 VALUES
     ("Renault", "Clio", 5, 5, "essence", 300, "automatique", "bleu", "B", "citadine", "AB-456-CD"),
