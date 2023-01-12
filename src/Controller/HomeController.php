@@ -35,7 +35,6 @@ class HomeController extends AbstractController
                 'cars' => $cars,
                 'startDate' => $rentDate,
                 'endDate' => $returnDate,
-
             ]);
         }
         $carSport = $vehicleRepository->findBy(['type' => 'sportive']);

@@ -155,12 +155,12 @@
                 <div class="element-item">
                     <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="300">
                         <h3 class="item_title mb-0">
-                            <a href="#!">
+                            <a href="{{ path('app_reservation', { id: car.id })}}">
                                 {{ car.brand }} {{ car.model }}
                             </a>
                         </h3>
                         <div class="item_image position-relative">
-                            <a class="image_wrap" href="#!">
+                            <a class="image_wrap" href="{{ path('app_reservation', { id: car.id })}}">
                                 <img src="{{ asset('images/upload_vehicle/'~car.photo) }}" alt="image_not_found">
                             </a>
                             <span class="item_price bg_default_blue">{{ car.price }}€ / day</span>
