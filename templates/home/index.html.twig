@@ -7,7 +7,7 @@
     <div id="thetop"></div>
     <div class="backtotop">
         <a href="#" class="scroll">
-            <i class="far fa-arrow-up"></i>
+            <i class="fa fa-arrow-up"></i>
         </a>
     </div>
     <!-- backtotop - end -->
@@ -70,8 +70,10 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                         <div class="brand_logo">
                             <a href="index.html">
-                                <img src="{{ asset('build/images/about/img_01.jpg') }}" srcset="assets/images/logo/logo_01_2x.png 2x" alt="logo_not_found">
-                                <img src="{{ asset('build/images/logo/logo_02_1x.png') }}" srcset="assets/images/logo/logo_02_2x.png 2x" alt="logo_not_found">
+                                <img src="{{ asset('images/about/img_01.jpg') }}"
+                                     srcset="{{ asset('images/logo/logo_01_2x.png') }}" alt="logo_not_found">
+                                <img src="{{ asset('images/logo/logo_02_1x.png') }}"
+                                     srcset="{{ asset('images/logo/logo_02_2x.png') }}" alt="logo_not_found">
                             </a>
                         </div>
                     </div>
@@ -79,65 +81,78 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 col-6 order-last">
                         <ul class="header_action_btns ul_li_right clearfix">
                             <li>
-                                <button type="button" class="search_btn" data-toggle="collapse" data-target="#collapse_search_body" aria-expanded="false" aria-controls="collapse_search_body">
-                                    <i class="fal fa-search"></i>
+                                <button type="button" class="search_btn" data-toggle="collapse"
+                                        data-target="#collapse_search_body" aria-expanded="false"
+                                        aria-controls="collapse_search_body">
+                                    <i class="fa fa-search"></i>
                                 </button>
                             </li>
                             <li class="dropdown">
-                                <button type="button" class="cart_btn" id="cart_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fal fa-shopping-cart"></i>
+                                <button type="button" class="cart_btn" id="cart_dropdown" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-shopping-cart"></i>
                                     <span class="cart_counter bg_default_red">3</span>
                                 </button>
-                                <div class="cart_dropdown rotors_dropdown dropdown-menu" aria-labelledby="cart_dropdown">
+                                <div class="cart_dropdown rotors_dropdown dropdown-menu"
+                                     aria-labelledby="cart_dropdown">
                                     <h4 class="wrap_title">Cart Items: (3)</h4>
                                     <ul class="cart_items_list ul_li_block clearfix">
                                         <li>
                                             <div class="item_image">
-                                                <img src="assets/images/cart/img_2.png" alt="image_not_found">
+                                                <img src="{{ asset('images/cart/img_2.png') }}" alt="image_not_found">
                                             </div>
                                             <div class="item_content">
                                                 <h4 class="item_title">Digital Infrared Thermometer</h4>
                                                 <span class="item_price">$39.50</span>
                                             </div>
-                                            <button type="button" class="remove_btn"><i class="fal fa-times"></i></button>
+                                            <button type="button" class="remove_btn"><i class="fa fa-times"></i>
+                                            </button>
                                         </li>
 
                                         <li>
                                             <div class="item_image">
-                                                <img src="assets/images/cart/img_2.png" alt="image_not_found">
+                                                <img src="{{ asset('images/cart/img_2.png') }}" alt="image_not_found">
                                             </div>
                                             <div class="item_content">
                                                 <h4 class="item_title">Digital Infrared Thermometer</h4>
                                                 <span class="item_price">$39.50</span>
                                             </div>
-                                            <button type="button" class="remove_btn"><i class="fal fa-times"></i></button>
+                                            <button type="button" class="remove_btn"><i class="fa fa-times"></i>
+                                            </button>
                                         </li>
 
                                         <li>
                                             <div class="item_image">
-                                                <img src="assets/images/cart/img_2.png" alt="image_not_found">
+                                                <img src="{{ asset('images/cart/img_2.png') }}" alt="image_not_found">
                                             </div>
                                             <div class="item_content">
                                                 <h4 class="item_title">Digital Infrared Thermometer</h4>
                                                 <span class="item_price">$39.50</span>
                                             </div>
-                                            <button type="button" class="remove_btn"><i class="fal fa-times"></i></button>
+                                            <button type="button" class="remove_btn"><i class="fa fa-times"></i>
+                                            </button>
                                         </li>
                                     </ul>
                                     <ul class="btns_group ul_li_block clearfix">
-                                        <li><a href="cart.html" class="custom_btn bg_default_red text-uppercase">View Cart <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></a></li>
-                                        <li><a href="#!" class="custom_btn bg_default_black text-uppercase">Checkout <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></a></li>
+                                        <li><a href="cart.html" class="custom_btn bg_default_red text-uppercase">View
+                                                Cart <img src="{{ asset('images/icons/icon_01.png') }}"
+                                                          alt="icon_not_found"></a></li>
+                                        <li><a href="#!" class="custom_btn bg_default_black text-uppercase">Checkout
+                                                <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="dropdown">
-                                <button type="button" class="user_btn" id="user_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fal fa-user"></i>
+                                <button type="button" class="user_btn" id="user_dropdown" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user"></i>
                                 </button>
-                                <div class="user_dropdown rotors_dropdown dropdown-menu clearfix" aria-labelledby="user_dropdown">
+                                <div class="user_dropdown rotors_dropdown dropdown-menu clearfix"
+                                     aria-labelledby="user_dropdown">
                                     <div class="profile_info clearfix">
                                         <a href="#!" class="user_thumbnail">
-                                            <img src="assets/images/meta/img_01.png" alt="thumbnail_not_found">
+                                            <img src="{{ asset('images/about/img_01.jpg') }}" alt="thumbnail_not_found">
                                         </a>
                                         <div class="user_content">
                                             <h4 class="user_name"><a href="#!">Rakibul Hassan</a></h4>
@@ -145,14 +160,15 @@
                                         </div>
                                     </div>
                                     <ul class="ul_li_block clearfix">
-                                        <li><a href="#!"><i class="fal fa-user-circle"></i> Profile</a></li>
-                                        <li><a href="#!"><i class="fal fa-user-cog"></i> Settings</a></li>
-                                        <li><a href="#!"><i class="fal fa-sign-out"></i> Logout</a></li>
+                                        <li><a href="#!"><i class="fa fa-user-circle"></i> Profile</a></li>
+                                        <li><a href="#!"><i class="fa fa-user-cog"></i> Settings</a></li>
+                                        <li><a href="#!"><i class="fa fa-sign-out"></i> Logout</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li>
-                                <button type="button" class="mobile_sidebar_btn"><i class="fal fa-align-right"></i></button>
+                                <button type="button" class="mobile_sidebar_btn"><i class="fa fa-align-right"></i>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -217,7 +233,7 @@
                     <form action="#">
                         <div class="form_item">
                             <input type="search" name="search" placeholder="Type here...">
-                            <button type="submit"><i class="fal fa-search"></i></button>
+                            <button type="submit"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
                 </div>
@@ -237,16 +253,19 @@
         ================================================== -->
         <div class="sidebar-menu-wrapper">
             <div class="mobile_sidebar_menu">
-                <button type="button" class="close_btn"><i class="fal fa-times"></i></button>
+                <button type="button" class="close_btn"><i class="fa fa-times"></i></button>
 
                 <div class="about_content mb_60">
                     <div class="brand_logo mb_15">
                         <a href="index.html">
-                            <img src="assets/images/logo/logo_01_1x.png" srcset="assets/images/logo/logo_01_2x.png 2x" alt="logo_not_found">
+                            <img src="{{ asset('images/logo/logo_01_1x.png') }}"
+                                 srcset=" {{ asset('images/logo/logo_01_2x.png') }}" alt="logo_not_found">
                         </a>
                     </div>
                     <p class="mb-0">
-                        Nullam id dolor auctor, dignissim magna eu, mattis ante. Pellentesque tincidunt, elit a facilisis efficitur, nunc nisi scelerisque enim, rhoncus malesuada est velit a nulla. Cras porta mi vitae dolor tristique euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        Nullam id dolor auctor, dignissim magna eu, mattis ante. Pellentesque tincidunt, elit a
+                        facilisis efficitur, nunc nisi scelerisque enim, rhoncus malesuada est velit a nulla. Cras porta
+                        mi vitae dolor tristique euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit
                     </p>
                 </div>
 
@@ -271,14 +290,16 @@
                                 <li><a href="account.html">My Account</a></li>
                                 <li><a href="reservation.html">Reservation</a></li>
                                 <li class="dropdown">
-                                    <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</a>
+                                    <a href="#!" data-toggle="dropdown" aria-haspopup="true"
+                                       aria-expanded="false">Blogs</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="blog.html">Blog</a></li>
                                         <li><a href="blog_details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Cars</a>
+                                    <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our
+                                        Cars</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="car.html">Cars</a></li>
                                         <li><a href="car_details.html">Car Details</a></li>
@@ -290,7 +311,8 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
+                            <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact
+                                Us</a>
                             <ul class="dropdown-menu">
                                 <li><a href="contact.html">Contact Default</a></li>
                                 <li><a href="contact_wordwide.html">Contact Wordwide</a></li>
@@ -302,21 +324,25 @@
                 <div class="booking_car_form">
                     <h3 class="title_text text-white mb-2">Book A Car</h3>
                     <p class="mb_15">
-                        Nullam id dolor auctor, dignissim magna eu, mattis ante. Pellentesque tincidunt, elit a facilisis efficitur.
+                        Nullam id dolor auctor, dignissim magna eu, mattis ante. Pellentesque tincidunt, elit a
+                        facilisis efficitur.
                     </p>
                     <form action="#">
                         <div class="form_item">
                             <h4 class="input_title text-white">Pick Up Location</h4>
                             <div class="position-relative">
-                                <input id="location_one" type="text" name="location" placeholder="City, State or Airport Code">
-                                <label for="location_one" class="input_icon"><i class="fas fa-map-marker-alt"></i></label>
+                                <input id="location_one" type="text" name="location"
+                                       placeholder="City, State or Airport Code">
+                                <label for="location_one" class="input_icon"><i
+                                            class="fas fa-map-marker-alt"></i></label>
                             </div>
                         </div>
                         <div class="form_item">
                             <h4 class="input_title text-white">Pick A Date</h4>
                             <input type="date" name="date">
                         </div>
-                        <button type="submit" class="custom_btn bg_default_red btn_width text-uppercase">Book A Car <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></button>
+                        <button type="submit" class="custom_btn bg_default_red btn_width text-uppercase">Book A Car <img
+                                    src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></button>
                     </form>
                 </div>
 
@@ -331,19 +357,23 @@
         ================================================== -->
         <section class="slider_section text-white text-center position-relative clearfix">
             <div class="main_slider clearfix">
-                <div class="item has_overlay d-flex align-items-center" data-bg-image="assets/images/backgrounds/bg_02.jpg">
+                <div class="item has_overlay d-flex align-items-center"
+                     data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
                     <div class="overlay"></div>
                     <div class="container">
 
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                 <div class="slider_content text-center">
-                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">Lamborghini Aventador LP700-4</h3>
+                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">
+                                        Lamborghini Aventador LP700-4</h3>
                                     <p data-animation="fadeInUp" data-delay=".5s">
-                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color: Black
+                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color:
+                                        Black
                                     </p>
                                     <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
-                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></a>
+                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now
+                                            <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
                                     </div>
                                 </div>
                             </div>
@@ -351,19 +381,23 @@
                     </div>
                 </div>
 
-                <div class="item has_overlay d-flex align-items-center" data-bg-image="assets/images/backgrounds/bg_02.jpg">
+                <div class="item has_overlay d-flex align-items-center"
+                     data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
                     <div class="overlay"></div>
                     <div class="container">
 
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                 <div class="slider_content text-center">
-                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">Lamborghini Aventador LP700-4</h3>
+                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">
+                                        Lamborghini Aventador LP700-4</h3>
                                     <p data-animation="fadeInUp" data-delay=".5s">
-                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color: Black
+                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color:
+                                        Black
                                     </p>
                                     <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
-                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></a>
+                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now
+                                            <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
                                     </div>
                                 </div>
                             </div>
@@ -371,19 +405,23 @@
                     </div>
                 </div>
 
-                <div class="item has_overlay d-flex align-items-center" data-bg-image="assets/images/backgrounds/bg_02.jpg">
+                <div class="item has_overlay d-flex align-items-center"
+                     data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
                     <div class="overlay"></div>
                     <div class="container">
 
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                 <div class="slider_content text-center">
-                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">Lamborghini Aventador LP700-4</h3>
+                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">
+                                        Lamborghini Aventador LP700-4</h3>
                                     <p data-animation="fadeInUp" data-delay=".5s">
-                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color: Black
+                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color:
+                                        Black
                                     </p>
                                     <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
-                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></a>
+                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now
+                                            <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
                                     </div>
                                 </div>
                             </div>
@@ -393,8 +431,8 @@
             </div>
 
             <div class="carousel_nav clearfix">
-                <button type="button" class="main_left_arrow"><i class="fal fa-chevron-left"></i></button>
-                <button type="button" class="main_right_arrow"><i class="fal fa-chevron-right"></i></button>
+                <button type="button" class="main_left_arrow"><i class="fa fa-chevron-left"></i></button>
+                <button type="button" class="main_right_arrow"><i class="fa fa-chevron-right"></i></button>
             </div>
         </section>
         <!-- slider_section - end
@@ -412,8 +450,10 @@
                                 <div class="form_item">
                                     <h4 class="input_title text-white">Pick Up Location</h4>
                                     <div class="position-relative">
-                                        <input id="location_two" type="text" name="location" placeholder="City, State or Airport Code">
-                                        <label for="location_two" class="input_icon"><i class="fas fa-map-marker-alt"></i></label>
+                                        <input id="location_two" type="text" name="location"
+                                               placeholder="City, State or Airport Code">
+                                        <label for="location_two" class="input_icon"><i
+                                                    class="fas fa-map-marker-alt"></i></label>
                                     </div>
                                 </div>
                             </div>
@@ -434,7 +474,8 @@
                             </div>
 
                             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                <button type="submit" class="custom_btn bg_default_red text-uppercase">Find A Car <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></button>
+                                <button type="submit" class="custom_btn bg_default_red text-uppercase">Find A Car <img
+                                            src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></button>
                             </div>
                         </div>
                     </form>
@@ -457,17 +498,27 @@
                                 <span>Featured Vehicles</span>
                             </h2>
                             <p class="mb-0">
-                                Mauris cursus quis lorem sed cursus. Aenean aliquam pellentesque magna, ut dictum ex pellentesque
+                                Mauris cursus quis lorem sed cursus. Aenean aliquam pellentesque magna, ut dictum ex
+                                pellentesque
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <ul class="button-group filters-button-group ul_li_center mb_30 clearfix" data-aos="fade-up" data-aos-delay="300">
-                    <li><button class="button active" data-filter="*">All</button></li>
-                    <li><button class="button" data-filter=".sedan">Sedan</button></li>
-                    <li><button class="button" data-filter=".sports">Sports</button></li>
-                    <li><button class="button" data-filter=".luxury">Luxury</button></li>
+                <ul class="button-group filters-button-group ul_li_center mb_30 clearfix" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <li>
+                        <button class="button active" data-filter="*">All</button>
+                    </li>
+                    <li>
+                        <button class="button" data-filter=".sedan">Sedan</button>
+                    </li>
+                    <li>
+                        <button class="button" data-filter=".sports">Sports</button>
+                    </li>
+                    <li>
+                        <button class="button" data-filter=".luxury">Luxury</button>
+                    </li>
                 </ul>
 
                 <div class="feature_vehicle_filter element-grid clearfix">
@@ -480,7 +531,7 @@
                             </h3>
                             <div class="item_image position-relative">
                                 <a class="image_wrap" href="#!">
-                                    <img src="assets/images/feature/img_01.jpg" alt="image_not_found">
+                                    <img src="{{ asset('images/feature/img_01.jpg') }}" alt="image_not_found">
                                 </a>
                                 <span class="item_price bg_default_blue">$230/Day</span>
                             </div>
@@ -502,7 +553,7 @@
                             </h3>
                             <div class="item_image position-relative">
                                 <a class="image_wrap" href="#!">
-                                    <img src="assets/images/feature/img_02.jpg" alt="image_not_found">
+                                    <img src="{{ asset('images/feature/img_02.jpg') }}" alt="image_not_found">
                                 </a>
                                 <span class="item_price bg_default_blue">$230/Day</span>
                             </div>
@@ -524,7 +575,7 @@
                             </h3>
                             <div class="item_image position-relative">
                                 <a class="image_wrap" href="#!">
-                                    <img src="assets/images/feature/img_03.jpg" alt="image_not_found">
+                                    <img src="{{ asset('images/feature/img_03.jpg') }}" alt="image_not_found">
                                 </a>
                                 <span class="item_price bg_default_blue">$120/Day</span>
                             </div>
@@ -546,7 +597,7 @@
                             </h3>
                             <div class="item_image position-relative">
                                 <a class="image_wrap" href="#!">
-                                    <img src="assets/images/feature/img_04.jpg" alt="image_not_found">
+                                    <img src="{{ asset('images/feature/img_04.jpg') }}" alt="image_not_found">
                                 </a>
                                 <span class="item_price bg_default_blue">$230/Day</span>
                             </div>
@@ -568,7 +619,7 @@
                             </h3>
                             <div class="item_image position-relative">
                                 <a class="image_wrap" href="#!">
-                                    <img src="assets/images/feature/img_05.jpg" alt="image_not_found">
+                                    <img src="{{ asset('images/feature/img_05.jpg') }}" alt="image_not_found">
                                 </a>
                                 <span class="item_price bg_default_blue">$160/Day</span>
                             </div>
@@ -590,7 +641,7 @@
                             </h3>
                             <div class="item_image position-relative">
                                 <a class="image_wrap" href="#!">
-                                    <img src="assets/images/feature/img_06.jpg" alt="image_not_found">
+                                    <img src="{{ asset('images/feature/img_06.jpg') }}" alt="image_not_found">
                                 </a>
                                 <span class="item_price bg_default_blue">$230/Day</span>
                             </div>
@@ -605,7 +656,8 @@
                 </div>
 
                 <div class="abtn_wrap text-center clearfix" data-aos="fade-up" data-aos-delay="100">
-                    <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book A Car <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></a>
+                    <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book A Car <img
+                                src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
                 </div>
 
             </div>
@@ -616,7 +668,8 @@
 
         <!-- service_section - start
         ================================================== -->
-        <section class="service_section sec_ptb_150 pb-0 mb_100 text-white clearfix" data-bg-gradient="linear-gradient(0deg, #0C0C0F, #292D45)">
+        <section class="service_section sec_ptb_150 pb-0 mb_100 text-white clearfix"
+                 data-bg-gradient="linear-gradient(0deg, #0C0C0F, #292D45)">
             <div class="container">
 
                 <div class="section_title mb_30 text-center" data-aos="fade-up" data-aos-delay="100">
@@ -629,7 +682,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="service_primary text-center text-white" data-aos="fade-up" data-aos-delay="100">
                             <div class="item_icon">
-                                <i class="far fa-shield-alt"></i>
+                                <i class="fa fa-shield-alt"></i>
                             </div>
                             <h3 class="item_title text-white">Secured Payment Guarantee</h3>
                             <p class="mb-0">
@@ -641,7 +694,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="service_primary text-center text-white" data-aos="fade-up" data-aos-delay="300">
                             <div class="item_icon">
-                                <i class="fal fa-headset"></i>
+                                <i class="fa fa-headset"></i>
                             </div>
                             <h3 class="item_title text-white">Help Center & Support 24/7</h3>
                             <p class="mb-0">
@@ -653,7 +706,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="service_primary text-center text-white" data-aos="fade-up" data-aos-delay="500">
                             <div class="item_icon">
-                                <i class="far fa-shield-alt"></i>
+                                <i class="fa fa-shield-alt"></i>
                             </div>
                             <h3 class="item_title text-white">Booking any Class Vehicles</h3>
                             <p class="mb-0">
@@ -703,41 +756,44 @@
                     <div class="slideshow1_slider" data-aos="fade-up" data-aos-delay="100">
                         <div class="item">
                             <div class="feature_fullimage">
-                                <img src="assets/images/feature/img_07.jpg" alt="image_not_found">
+                                <img src="{{ asset('images/feature/img_07.jpg') }}" alt="image_not_found">
                                 <div class="item_content text-white">
                                     <span class="item_price bg_default_blue">$670/Day</span>
-                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray  </h3>
-                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img src="assets/images/icons/icon_02.png" alt="icon_not_found"></a>
+                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray </h3>
+                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img
+                                                src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="feature_fullimage">
-                                <img src="assets/images/feature/img_07.jpg" alt="image_not_found">
+                                <img src="{{ asset('images/feature/img_07.jpg') }}" alt="image_not_found">
                                 <div class="item_content text-white">
                                     <span class="item_price bg_default_blue">$670/Day</span>
-                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray  </h3>
-                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img src="assets/images/icons/icon_02.png" alt="icon_not_found"></a>
+                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray </h3>
+                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img
+                                                src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="item">
                             <div class="feature_fullimage">
-                                <img src="assets/images/feature/img_07.jpg" alt="image_not_found">
+                                <img src="{{ asset('images/feature/img_07.jpg') }}" alt="image_not_found">
                                 <div class="item_content text-white">
                                     <span class="item_price bg_default_blue">$670/Day</span>
-                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray  </h3>
-                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img src="assets/images/icons/icon_02.png" alt="icon_not_found"></a>
+                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray </h3>
+                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img
+                                                src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="carousel_nav">
-                        <button type="button" class="s1_left_arrow"><i class="fal fa-angle-left"></i></button>
-                        <button type="button" class="s1_right_arrow"><i class="fal fa-angle-right"></i></button>
+                        <button type="button" class="s1_left_arrow"><i class="fa fa-angle-left"></i></button>
+                        <button type="button" class="s1_right_arrow"><i class="fa fa-angle-right"></i></button>
                     </div>
                 </div>
 
@@ -760,7 +816,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="blog_child" data-aos="fade-up" data-aos-delay="300">
                                         <a class="item_image" href="blog_details.html">
-                                            <img src="assets/images/blog/child_01.jpg" alt="image_not_found">
+                                            <img src="{{ asset('images/blog/child_01.jpg') }}" alt="image_not_found">
                                         </a>
                                         <div class="item_content">
                                             <h4 class="item_title mb-0">
@@ -775,7 +831,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="blog_child" data-aos="fade-up" data-aos-delay="500">
                                         <a class="item_image" href="blog_details.html">
-                                            <img src="assets/images/blog/child_02.jpg" alt="image_not_found">
+                                            <img src="{{ asset('images/blog/child_02.jpg') }}" alt="image_not_found">
                                         </a>
                                         <div class="item_content">
                                             <h4 class="item_title mb-0">
@@ -796,7 +852,8 @@
                             <p class="mb_30" data-aos="fade-up" data-aos-delay="300">
                                 Phasellus efficitur dolor sit amet odio scelerisque, et luctus eros lobortis
                             </p>
-                            <ul class="primary_social_links ul_li mb_30 clearfix" data-aos="fade-up" data-aos-delay="500">
+                            <ul class="primary_social_links ul_li mb_30 clearfix" data-aos="fade-up"
+                                data-aos-delay="500">
                                 <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
                                 <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
@@ -810,7 +867,10 @@
                                     </form>
                                 </div>
                                 <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-                                    <button type="submit" class="custom_btn bg_default_red text-uppercase w-100 d-block">Book A Car <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></button>
+                                    <button type="submit"
+                                            class="custom_btn bg_default_red text-uppercase w-100 d-block">Book A Car
+                                        <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found">
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -838,15 +898,19 @@
                 </div>
 
                 <div class="testimonial_carousel_wrap position-relative">
-                    <div class="testimonial_carousel" data-slick='{"dots": false}' data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial_carousel" data-slick='{"dots": false}' data-aos="fade-up"
+                         data-aos-delay="300">
                         <div class="item">
                             <div class="testimonial_item2 text-center">
                                 <p class="mb_30">
-                                    “Ut id lobortis eros, sed finibus dui. Cras eget purus lacus. Suspendisse sodales massa quis turpis ultrices ultricies. Cras euismod eros at vehicula sagittis. Suspendisse condimentum tortor nec enim pellentesque feugiat. Nulla tempor urna vitae sapien iaculis, auctor condimentum enim auctor”
+                                    “Ut id lobortis eros, sed finibus dui. Cras eget purus lacus. Suspendisse sodales
+                                    massa quis turpis ultrices ultricies. Cras euismod eros at vehicula sagittis.
+                                    Suspendisse condimentum tortor nec enim pellentesque feugiat. Nulla tempor urna
+                                    vitae sapien iaculis, auctor condimentum enim auctor”
                                 </p>
                                 <div class="admin_info">
                                     <div class="admin_image">
-                                        <img src="assets/images/meta/img_01.png" alt="image_not_found">
+                                        <img src="{{ asset('images/meta/img_01.png') }}" alt="image_not_found">
                                     </div>
                                     <h4 class="admin_name">Marianna Frazoni</h4>
                                     <ul class="rating_star ul_li_center clearfix">
@@ -863,11 +927,14 @@
                         <div class="item">
                             <div class="testimonial_item2 text-center">
                                 <p class="mb_30">
-                                    “Ut id lobortis eros, sed finibus dui. Cras eget purus lacus. Suspendisse sodales massa quis turpis ultrices ultricies. Cras euismod eros at vehicula sagittis. Suspendisse condimentum tortor nec enim pellentesque feugiat. Nulla tempor urna vitae sapien iaculis, auctor condimentum enim auctor”
+                                    “Ut id lobortis eros, sed finibus dui. Cras eget purus lacus. Suspendisse sodales
+                                    massa quis turpis ultrices ultricies. Cras euismod eros at vehicula sagittis.
+                                    Suspendisse condimentum tortor nec enim pellentesque feugiat. Nulla tempor urna
+                                    vitae sapien iaculis, auctor condimentum enim auctor”
                                 </p>
                                 <div class="admin_info">
                                     <div class="admin_image">
-                                        <img src="assets/images/meta/img_01.png" alt="image_not_found">
+                                        <img src="{{ asset('images/meta/img_01.png') }}" alt="image_not_found">
                                     </div>
                                     <h4 class="admin_name">Marianna Frazoni</h4>
                                     <ul class="rating_star ul_li_center clearfix">
@@ -884,11 +951,14 @@
                         <div class="item">
                             <div class="testimonial_item2 text-center">
                                 <p class="mb_30">
-                                    “Ut id lobortis eros, sed finibus dui. Cras eget purus lacus. Suspendisse sodales massa quis turpis ultrices ultricies. Cras euismod eros at vehicula sagittis. Suspendisse condimentum tortor nec enim pellentesque feugiat. Nulla tempor urna vitae sapien iaculis, auctor condimentum enim auctor”
+                                    “Ut id lobortis eros, sed finibus dui. Cras eget purus lacus. Suspendisse sodales
+                                    massa quis turpis ultrices ultricies. Cras euismod eros at vehicula sagittis.
+                                    Suspendisse condimentum tortor nec enim pellentesque feugiat. Nulla tempor urna
+                                    vitae sapien iaculis, auctor condimentum enim auctor”
                                 </p>
                                 <div class="admin_info">
                                     <div class="admin_image">
-                                        <img src="assets/images/meta/img_01.png" alt="image_not_found">
+                                        <img src="{{ asset('images/meta/img_01.png') }}" alt="image_not_found">
                                     </div>
                                     <h4 class="admin_name">Marianna Frazoni</h4>
                                     <ul class="rating_star ul_li_center clearfix">
@@ -904,8 +974,8 @@
                     </div>
 
                     <div class="carousel_nav position_ycenter">
-                        <button type="button" class="ts_left_arrow"><i class="fal fa-angle-left"></i></button>
-                        <button type="button" class="ts_right_arrow"><i class="fal fa-angle-right"></i></button>
+                        <button type="button" class="ts_left_arrow"><i class="fa fa-angle-left"></i></button>
+                        <button type="button" class="ts_right_arrow"><i class="fa fa-angle-right"></i></button>
                     </div>
                 </div>
 
@@ -930,22 +1000,25 @@
                         <div class="footer_about" data-aos="fade-up" data-aos-delay="100">
                             <div class="brand_logo mb_30">
                                 <a href="index.html">
-                                    <img src="assets/images/logo/logo_02_1x.png" srcset="assets/images/logo/logo_02_2x.png 2x" alt="logo_not_found">
+                                    <img src="{{ asset('images/logo/logo_02_1x.png') }}"
+                                         srcset="{{ asset('images/logo/logo_02_2x.png') }}" alt="logo_not_found">
                                 </a>
                             </div>
                             <p class="mb_15">
-                                Cras sit amet mi non orci pretium consectetur. Donec iaculis ante ac sollicitudin luctus. Phasellus ut lacus lacus. Phasellus sagittis ex id tortor tincidunt luctus. Donec consectetur consequat bibendum
+                                Cras sit amet mi non orci pretium consectetur. Donec iaculis ante ac sollicitudin
+                                luctus. Phasellus ut lacus lacus. Phasellus sagittis ex id tortor tincidunt luctus.
+                                Donec consectetur consequat bibendum
                             </p>
                             <div class="footer_useful_links mb_30">
                                 <ul class="ul_li_block clearfix">
-                                    <li><a href="#!"><i class="fal fa-angle-right"></i> Rental Information</a></li>
-                                    <li><a href="#!"><i class="fal fa-angle-right"></i> F.A.Q.</a></li>
+                                    <li><a href="#!"><i class="fa fa-angle-right"></i> Rental Information</a></li>
+                                    <li><a href="#!"><i class="fa fa-angle-right"></i> F.A.Q.</a></li>
                                 </ul>
                             </div>
                             <div class="form_item mb-0">
                                 <form action="#">
                                     <input id="footer_search" type="search" name="search" placeholder="Search">
-                                    <label for="footer_search" class="input_icon"><i class="fal fa-search"></i></label>
+                                    <label for="footer_search" class="input_icon"><i class="fa fa-search"></i></label>
                                 </form>
                             </div>
                         </div>
@@ -962,7 +1035,7 @@
                                     </p>
                                 </li>
                                 <li><i class="fas fa-clock"></i> 8:00am-9:30pm</li>
-                                <li><i class="far fa-angle-right"></i> Other Office Locations</li>
+                                <li><i class="fa fa-angle-right"></i> Other Office Locations</li>
                                 <li><i class="fas fa-envelope"></i> <strong>rotorseml@eml.fr</strong></li>
                                 <li><i class="fas fa-phone"></i> <strong>+880 1680 6361 89</strong></li>
                             </ul>
@@ -973,13 +1046,14 @@
                         <div class="footer_useful_links" data-aos="fade-up" data-aos-delay="300">
                             <h3 class="footer_widget_title">Information:</h3>
                             <ul class="ul_li_block clearfix">
-                                <li><a href="#!"><i class="fal fa-angle-right"></i> Find a Car for Rent in the Nearest Location</a></li>
-                                <li><a href="#!"><i class="fal fa-angle-right"></i> Cars Catalog</a></li>
-                                <li><a href="#!"><i class="fal fa-angle-right"></i> F.A.Q.</a></li>
-                                <li><a href="#!"><i class="fal fa-angle-right"></i> About Us</a></li>
-                                <li><a href="#!"><i class="fal fa-angle-right"></i> Contact Us</a></li>
-                                <li><a href="#!"><i class="fal fa-angle-right"></i> Help Center</a></li>
-                                <li><a href="#!"><i class="fal fa-angle-right"></i> Privacy Police</a></li>
+                                <li><a href="#!"><i class="fa fa-angle-right"></i> Find a Car for Rent in the Nearest
+                                        Location</a></li>
+                                <li><a href="#!"><i class="fa fa-angle-right"></i> Cars Catalog</a></li>
+                                <li><a href="#!"><i class="fa fa-angle-right"></i> F.A.Q.</a></li>
+                                <li><a href="#!"><i class="fa fa-angle-right"></i> About Us</a></li>
+                                <li><a href="#!"><i class="fa fa-angle-right"></i> Contact Us</a></li>
+                                <li><a href="#!"><i class="fa fa-angle-right"></i> Help Center</a></li>
+                                <li><a href="#!"><i class="fa fa-angle-right"></i> Privacy Police</a></li>
                             </ul>
                         </div>
                     </div>
@@ -991,7 +1065,8 @@
             <div class="container">
                 <div class="row align-items-center justify-content-lg-between">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <p class="copyright_text mb-0">Copyright © 2020. Rotors by <a class="author_links text-white" href="#!">Merkulove</a></p>
+                        <p class="copyright_text mb-0">Copyright © 2020. Rotors by <a class="author_links text-white"
+                                                                                      href="#!">Merkulove</a></p>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -1006,4 +1081,5 @@
             </div>
         </div>
     </footer>
+
 {% endblock %}
