@@ -31,6 +31,7 @@ class UserFixtures extends Fixture
             $user->setZipCode($faker->numberBetween(11111,99999));
             $user->setCity($faker->city());
             $user->setPhoneNumber($faker->phoneNumber());
+            $this->addReference('user_' . $i, $user);
             $manager->persist($user);
         }
         $user = new User();

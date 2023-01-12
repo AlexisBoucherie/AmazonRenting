@@ -17,15 +17,16 @@
 
                 <div class="about_content mb_60">
                     <div class="brand_logo mb_15">
-                        <a href="index.html">
+                        <a href="{{ path('app_home') }}">
                             <img src="{{ asset('images/logo/logo_01_1x.png') }}"
                                  srcset=" {{ asset('images/logo/logo_01_2x.png') }}" alt="logo_not_found">
                         </a>
                     </div>
-                    <p class="mb-0">
-                        Nullam id dolor auctor, dignissim magna eu, mattis ante. Pellentesque tincidunt, elit a
-                        facilisis efficitur, nunc nisi scelerisque enim, rhoncus malesuada est velit a nulla. Cras porta
-                        mi vitae dolor tristique euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    <p class="mb-2">
+                        You're a private? Going on vacation? Having a professional meeting? Moving house? Book right now with Amazon Rental!
+                    </p>
+                    <p class="mb-2">
+                        You're a company? Want to make profit out of your spare vehicles? Contact-us, we'll take care of everything!
                     </p>
                 </div>
 
@@ -35,8 +36,7 @@
                         <li class="active dropdown">
                             <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
                             <ul class="dropdown-menu">
-                                <li><a href="index_1.html">Home Page V.1</a></li>
-                                <li><a href="index_2.html">Home Page V.2</a></li>
+                                <li><a href="{{ path('app_home') }}">Home Page</a></li>
                             </ul>
                         </li>
                         <li><a href="gallery.html">Our Cars</a></li>
@@ -117,77 +117,38 @@
         ================================================== -->
         <section class="slider_section text-white text-center position-relative clearfix">
             <div class="main_slider clearfix">
-                <div class="item has_overlay d-flex align-items-center"
-                     data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
-                    <div class="overlay"></div>
-                    <div class="container">
+                {% for car in carSport|slice(0,4) %}
+                    <div class="item has_overlay d-flex align-items-center"
+                         data-bg-image="{{ asset('images/upload_vehicle/'~car.photo) }}">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
 
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="slider_content text-center">
-                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">
-                                        Lamborghini Aventador LP700-4</h3>
-                                    <p data-animation="fadeInUp" data-delay=".5s">
-                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color:
-                                        Black
-                                    </p>
-                                    <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
-                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now
-                                            <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
+                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                    <div class="slider_content text-center">
+                                        <h3 class="text-white text-uppercase" data-animation="fadeInUp"
+                                            data-delay=".3s">
+                                            {{ car.brand|capitalize }} {{ car.model|capitalize }}</h3>
+                                        <p data-animation="fadeInUp" data-delay=".5s">
+                                            {{ car.numberOfSeats }} passengers, {{ car.transmission|capitalize }}, Fuel
+                                            Type:
+                                            {{ car.energy }},
+                                            Color:
+                                            {{ car.color }}
+                                        </p>
+                                        <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
+                                            <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book
+                                                Now
+                                                <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
-                </div>
-
-                <div class="item has_overlay d-flex align-items-center"
-                     data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
-                    <div class="overlay"></div>
-                    <div class="container">
-
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="slider_content text-center">
-                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">
-                                        Lamborghini Aventador LP700-4</h3>
-                                    <p data-animation="fadeInUp" data-delay=".5s">
-                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color:
-                                        Black
-                                    </p>
-                                    <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
-                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now
-                                            <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item has_overlay d-flex align-items-center"
-                     data-bg-image="{{ asset('images/backgrounds/bg_02.jpg') }}">
-                    <div class="overlay"></div>
-                    <div class="container">
-
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="slider_content text-center">
-                                    <h3 class="text-white text-uppercase" data-animation="fadeInUp" data-delay=".3s">
-                                        Lamborghini Aventador LP700-4</h3>
-                                    <p data-animation="fadeInUp" data-delay=".5s">
-                                        6.6L V8 32V DDI OHV Turbo Diesel, 5-Speed Automatic, Fuel Type: Diesel, Color:
-                                        Black
-                                    </p>
-                                    <div class="abtn_wrap clearfix" data-animation="fadeInUp" data-delay=".7s">
-                                        <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book Now
-                                            <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
             <div class="carousel_nav clearfix">
@@ -271,155 +232,46 @@
                         <button class="button active" data-filter="*">All</button>
                     </li>
                     <li>
-                        <button class="button" data-filter=".sedan">Sedan</button>
+                        <button class="button" data-filter=".berline">Sedan</button>
                     </li>
                     <li>
-                        <button class="button" data-filter=".sports">Sports</button>
+                        <button class="button" data-filter=".SUV">SUV</button>
                     </li>
                     <li>
-                        <button class="button" data-filter=".luxury">Luxury</button>
+                        <button class="button" data-filter=".sportive">Sports</button>
                     </li>
                 </ul>
 
                 <div class="feature_vehicle_filter element-grid clearfix">
-                    <div class="element-item sedan " data-category="sedan">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="100">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2015 Chevrolet Corvette Stingray Z51
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_01.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$230/Day</span>
+                    {% for car in cars %}
+                            <div class="element-item {{ car.type }}" data-category="{{ car.type }}">
+                                <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="100">
+                                    <h3 class="item_title mb-0">
+                                        <a href="#!">
+                                            {{ car.brand|capitalize }} {{ car.model|capitalize }}
+                                        </a>
+                                    </h3>
+                                    <div class="item_image position-relative">
+                                        <a class="image_wrap" href="#!">
+                                            <img src="{{ asset('images/upload_vehicle/'~car.photo) }}"
+                                                 alt="image_not_found" style="width: 345px; height: 260px ">
+                                        </a>
+                                        <span class="item_price bg_default_blue">{{ car.price }} $</span>
+                                    </div>
+                                    <ul class="info_list ul_li_center clearfix">
+                                        <li>{{ car.type|capitalize }}</li>
+                                        <li>{{ car.transmission|capitalize }}</li>
+                                        <li>{{ car.numberOfSeats }} PAX</li>
+                                        <li>{{ car.energy|capitalize }}</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Gasoline</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item sports " data-category="sports">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="300">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2019 Chevrolet Corvette Stingray Red
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_02.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$230/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Hybrid</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item luxury " data-category="luxury">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="500">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2015 Chevrolet Corvette Stingray Z51
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_03.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$120/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Gasoline</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item sedan " data-category="sedan">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="100">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2020 Audi New Generation P00234
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_04.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$230/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Electro</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item sports " data-category="sports">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="300">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2015 Chevrolet Corvette Stingray Z51
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_05.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$160/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Gasoline</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="element-item luxury " data-category="luxury">
-                        <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="500">
-                            <h3 class="item_title mb-0">
-                                <a href="#!">
-                                    2015 Chevrolet Corvette Stingray Z51
-                                </a>
-                            </h3>
-                            <div class="item_image position-relative">
-                                <a class="image_wrap" href="#!">
-                                    <img src="{{ asset('images/feature/img_06.jpg') }}" alt="image_not_found">
-                                </a>
-                                <span class="item_price bg_default_blue">$230/Day</span>
-                            </div>
-                            <ul class="info_list ul_li_center clearfix">
-                                <li>Sports</li>
-                                <li>Auto</li>
-                                <li>2 Passengers</li>
-                                <li>Hybrid</li>
-                            </ul>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-
                 <div class="abtn_wrap text-center clearfix" data-aos="fade-up" data-aos-delay="100">
                     <a class="custom_btn bg_default_red btn_width text-uppercase" href="#!">Book A Car <img
                                 src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></a>
                 </div>
-
             </div>
         </section>
         <!-- feature_section - end
@@ -434,7 +286,7 @@
 
                 <div class="section_title mb_30 text-center" data-aos="fade-up" data-aos-delay="100">
                     <h2 class="title_text text-white mb-0">
-                        <span>Why Usd</span>
+                        <span>Why Us</span>
                     </h2>
                 </div>
 
@@ -514,41 +366,20 @@
 
                 <div class="feature_carousel_wrap position-relative clearfix">
                     <div class="slideshow1_slider" data-aos="fade-up" data-aos-delay="100">
-                        <div class="item">
-                            <div class="feature_fullimage">
-                                <img src="{{ asset('images/feature/img_07.jpg') }}" alt="image_not_found">
-                                <div class="item_content text-white">
-                                    <span class="item_price bg_default_blue">$670/Day</span>
-                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray </h3>
-                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img
-                                                src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
+                        {% for car in carUtility|slice(0,2) %}
+                            <div class="item">
+                                <div class="feature_fullimage">
+                                    <img src="{{ asset('images/upload_vehicle/'~car.photo) }}"
+                                         style="width: 1100px; height: auto" alt="image_not_found">
+                                    <div class="item_content text-white">
+                                        <span class="item_price bg_default_blue">{{ car.price }} $</span>
+                                        <h3 class="item_title text-white">{{ car.brand|capitalize}} {{ car.model|capitalize }}</h3>
+                                        <a class="text_btn text-uppercase" href="#!"><span>Book A Car</span> <img
+                                                    src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="feature_fullimage">
-                                <img src="{{ asset('images/feature/img_07.jpg') }}" alt="image_not_found">
-                                <div class="item_content text-white">
-                                    <span class="item_price bg_default_blue">$670/Day</span>
-                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray </h3>
-                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img
-                                                src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="feature_fullimage">
-                                <img src="{{ asset('images/feature/img_07.jpg') }}" alt="image_not_found">
-                                <div class="item_content text-white">
-                                    <span class="item_price bg_default_blue">$670/Day</span>
-                                    <h3 class="item_title text-white">2017 Chevrolet Corvette C7 Stingray </h3>
-                                    <a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img
-                                                src="{{ asset('images/icons/icon_02.png') }}" alt="icon_not_found"></a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
 
                     <div class="carousel_nav">
@@ -562,90 +393,8 @@
         <!-- service_section - end
         ================================================== -->
 
-
-        <!-- blog_section - start
-        ================================================== -->
-        <section class="blog_section sec_ptb_150 clearfix">
-            <div class="container">
-                <div class="row justify-content-lg-between justify-content-center">
-
-                    <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
-                        <div class="blog_wrap">
-                            <h3 class="wrap_title mb-0" data-aos="fade-up" data-aos-delay="100">From the Blog:</h3>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="blog_child" data-aos="fade-up" data-aos-delay="300">
-                                        <a class="item_image" href="blog_details.html">
-                                            <img src="{{ asset('images/blog/child_01.jpg') }}" alt="image_not_found">
-                                        </a>
-                                        <div class="item_content">
-                                            <h4 class="item_title mb-0">
-                                                <a href="blog_details.html">
-                                                    Purus in massa tempor nec…
-                                                </a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="blog_child" data-aos="fade-up" data-aos-delay="500">
-                                        <a class="item_image" href="blog_details.html">
-                                            <img src="{{ asset('images/blog/child_02.jpg') }}" alt="image_not_found">
-                                        </a>
-                                        <div class="item_content">
-                                            <h4 class="item_title mb-0">
-                                                <a href="blog_details.html">
-                                                    Vestibulum lobortis aliquam nisl eget
-                                                </a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
-                        <div class="newsletter_form1">
-                            <h3 class="form_title mb_30" data-aos="fade-up" data-aos-delay="100">Subscribe:</h3>
-                            <p class="mb_30" data-aos="fade-up" data-aos-delay="300">
-                                Phasellus efficitur dolor sit amet odio scelerisque, et luctus eros lobortis
-                            </p>
-                            <ul class="primary_social_links ul_li mb_30 clearfix" data-aos="fade-up"
-                                data-aos-delay="500">
-                                <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                            </ul>
-                            <div class="row" data-aos="fade-up" data-aos-delay="700">
-                                <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-                                    <form action="#">
-                                        <div class="form_item mb-0">
-                                            <input type="email" name="email" placeholder="Enter your e-mail">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-                                    <button type="submit"
-                                            class="custom_btn bg_default_red text-uppercase w-100 d-block">Book A Car
-                                        <img src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- blog_section - end
-        ================================================== -->
-
-
         <hr class="m-0" data-aos="fade-up" data-aos-delay="100">
-
-
+        
         <!-- testimonial_section - start
         ================================================== -->
         <section class="testimonial_section sec_ptb_150 clearfix">
