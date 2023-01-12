@@ -6,8 +6,11 @@ use App\Repository\VehicleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: VehicleRepository::class)]
+#[Vich\Uploadable]
 class Vehicle
 {
     #[ORM\Id]
@@ -65,6 +68,25 @@ class Vehicle
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $photo = null;
+
+    #[Vich\UploadableField(mapping: 'vehicle_image', fileNameProperty: 'photo')]
+    private ?File $vehicleFile = null;
+
+    /**
+     * @return File|null
+     */
+    public function getVehicleFile(): ?File
+    {
+        return $this->vehicleFile;
+    }
+
+    /**
+     * @param File|null $vehicleFile
+     */
+    public function setVehicleFile(?File $vehicleFile): void
+    {
+        $this->vehicleFile = $vehicleFile;
+    }
 
     #[ORM\OneToMany(mappedBy: 'vehicleId', targetEntity: Event::class)]
     private Collection $events;
@@ -311,5 +333,10 @@ class Vehicle
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->model;
     }
 }

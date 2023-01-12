@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\EventRepository;
+use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -49,6 +50,15 @@ class Event
 
     #[ORM\ManyToOne(inversedBy: 'events')]
     private ?Vehicle $vehicleId = null;
+
+    /**
+     * @param \DateTimeImmutable|null $createdAt
+     */
+    public function __construct()
+    {
+        $this->createdAt = new DateTimeImmutable();
+    }
+
 
     public function getId(): ?int
     {
