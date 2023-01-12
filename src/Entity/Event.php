@@ -51,6 +51,10 @@ class Event
     #[ORM\ManyToOne(inversedBy: 'events')]
     private ?Vehicle $vehicleId = null;
 
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $price = null;
+
     /**
      * @param \DateTimeImmutable|null $createdAt
      */
@@ -58,7 +62,6 @@ class Event
     {
         $this->createdAt = new DateTimeImmutable();
     }
-
 
     public function getId(): ?int
     {
@@ -205,6 +208,18 @@ class Event
     public function setVehicleId(?Vehicle $vehicleId): self
     {
         $this->vehicleId = $vehicleId;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?string $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
