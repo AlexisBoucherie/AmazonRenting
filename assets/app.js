@@ -10,3 +10,15 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+import './js/aos';
+import './js/bootstrap.min';
+import './js/counterup.min';
+import './js/custom';
+import './js/jquery-ui';
+import './js/gmaps.min';
+import './js/imagesloaded.pkgd.min';
+import './js/isotope.pkgd';
+import './js/jquery-3.5.1.min';
+import './js/magnific-popup.min';
+import './js/masonry.pkgd.min';
+import './js/mCustomScrollbar';
