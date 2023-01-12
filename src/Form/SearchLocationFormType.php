@@ -35,6 +35,26 @@ class SearchLocationFormType extends AbstractType
                     'class' => 'input_title text-white',
                 ],
             ])
+            ->add('returnLocation', TextType::class, [
+                'attr' => [
+                    'placeholder' => 'City, State or Airport Code',
+                ],
+
+                'label_attr' => [
+                    'class' => 'input_title text-white'
+                ],
+                'required'=>false
+            ])
+            ->add('returnDate', DateType::class, [
+                'widget' => 'single_text',
+
+                // prevents rendering it as type="date", to avoid HTML5 date pickers
+                'html5' => true,
+
+                'label_attr' => [
+                    'class' => 'input_title text-white',
+                ],
+            ])
             ->add('price', TextType::class, [
                 'label_attr' => [
                     'class' => 'input_title text-white'

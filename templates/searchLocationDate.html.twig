@@ -2,39 +2,56 @@
     <div class="container">
         <div class="advance_search_form2" data-bg-color="#161829" data-aos="fade-up" data-aos-delay="100">
             {{ form_start(form, {'method': 'POST'}) }}
-                <div class="row align-items-end">
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="form_item">
-                            {{ form_label(form.location, 'Pick Up Location') }}
-                            <div class="position-relative">
-                                {{ form_widget(form.location) }}
-                                <label for="location_two" class="input_icon"><i
-                                            class="fas fa-map-marker-alt"></i></label>
-                            </div>
+            <div class="row align-items-end">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form_item">
+                        {{ form_label(form.location, 'Pick Up Location') }}
+                        <div class="position-relative">
+                            {{ form_widget(form.location) }}
+                            <label for="location_two" class="input_icon"><i
+                                        class="fas fa-map-marker-alt"></i></label>
                         </div>
                     </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="form_item">
-                            {{ form_label(form.date, 'Pick a Date') }}
-                            {{ form_widget(form.date) }}
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <div class="price-range-area clearfix">
-                            {{ form_label(form.price) }}
-                            <div id="slider-range" class="slider-range clearfix"></div>
-                            {{ form_widget(form.price) }}
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                        <button type="submit" class="custom_btn bg_default_red text-uppercase">Find A Car <img
-                                    src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></button>
-                    </div>
-
                 </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form_item">
+                        {{ form_label(form.date, 'Pick Up Date') }}
+                        {{ form_widget(form.date) }}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <div class="price-range-area clearfix">
+                        {{ form_label(form.price, 'Price (per day)') }}
+                        <div id="slider-range" class="slider-range clearfix"></div>
+                        {{ form_widget(form.price) }}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                    <button type="submit" class="custom_btn bg_default_red text-uppercase">Find A Car <img
+                                src="{{ asset('images/icons/icon_01.png') }}" alt="icon_not_found"></button>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mt-3">
+                    <div class="form_item">
+                        {{ form_label(form.returnLocation, 'Return Location (if different)') }}
+                        <div class="position-relative">
+                            {{ form_widget(form.returnLocation) }}
+                            <label for="location_two" class="input_icon"><i
+                                        class="fas fa-map-marker-alt"></i></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mt-3">
+                    <div class="form_item">
+                        {{ form_label(form.returnDate, 'Return Date') }}
+                        {{ form_widget(form.returnDate) }}
+                    </div>
+                </div>
+
+            </div>
             {{ form_end(form) }}
 
 

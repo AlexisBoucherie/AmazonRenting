@@ -33,7 +33,7 @@ class EventFixtures extends Fixture implements DependentFixtureInterface
             $event = new Event();
             $randUser = rand(0, 19);
             // à modifier suivant les ID des véhicules dans sa propre BDD
-            $randVehicle = rand(51, 100);
+            $randVehicle = rand(26, 50);
             $vehicle = $this->vehicleRepository->findOneBy(['id' => $randVehicle]);
 
             $startDate = $faker->DateTimeBetween('-15 days', '+15 day');

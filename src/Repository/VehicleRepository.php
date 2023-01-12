@@ -39,14 +39,30 @@ class VehicleRepository extends ServiceEntityRepository
         }
     }
 
-    public function findAvailableVehicle($date, $mibPrice, $maxPrice, $location)
+    public function findAvailableVehicle($rentDate, $returnDate, $minPrice, $maxPrice, $location, $returnLocation)
     {
-        foreach ($this->findAll() as $vehicle) {
-            $events = $vehicle->getEvents();
-            dd($events);
+        $isVehicleOpenToRent = true;
+        $vehiclesOpenToRent=[];
+        $allOnParkVehicles = $this->findBy(['isOnPark' => true]);
+        foreach ($allOnParkVehicles as $vehicle) {
+            if ($vehicle->getPrice() < $maxPrice &&  $vehicle->getPrice() > $minPrice && $vehicle->getLocalisation() === $location) {
+                $events = $vehicle->getEvents();
+                foreach ($events as $event) {
+                    if (
+                        $rentDate > $event->getStartDate()
+                        && $rentDate < $event->getEndDate()
+                        && $returnDate > $event->getStartDate()
+                    ) {
+                        $isVehicleOpenToRent = false;
+                    }
+                }
+                if ($isVehicleOpenToRent) {
+                    $vehiclesOpenToRent[]=$vehicle;
+                }
+            }
     }
-
-    }
+        return $vehiclesOpenToRent;
+}
 
 //    /**
 //     * @return Vehicle[] Returns an array of Vehicle objects
