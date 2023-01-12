@@ -1,7 +1,6 @@
 INSERT INTO vehicle (brand, model, number_of_doors,
                      number_of_seats, energy, volume,
                      transmission, color, licence_required, type, register_plate, photo, price) VALUES
-
     ("Renault", "Clio", 5, 5, "fuel", 300, "automatic", "blue", "B", "citadine", "AB-456-CD", "renault_clio.jpg", 50),
     ("Renault", "Captur", 5, 5, "fuel", 400, "manual", "white", "B", "SUV", "EF-789-GH", "renault_Captur.jpg", 50),
     ("Renault", "Megane", 5, 5, "diesel", 450, "automatic", "red", "B", "berline", "IJ-012-KL", "renault_megane.jpg", 70),
