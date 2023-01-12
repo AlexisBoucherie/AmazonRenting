@@ -50,6 +50,9 @@ class Event
     #[ORM\ManyToOne(inversedBy: 'events')]
     private ?Vehicle $vehicleId = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $price = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -195,6 +198,18 @@ class Event
     public function setVehicleId(?Vehicle $vehicleId): self
     {
         $this->vehicleId = $vehicleId;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?string $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
