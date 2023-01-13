@@ -28,13 +28,22 @@ class HomeController extends AbstractController
             $maxPrice=str_replace('$','',$maxPrice);
             $location=$data['location'];
             $rentDate=$data['date'];
-            $returnLocation=$data['returnLocation'];
+            if (empty($data['returnLocation'])) {
+                $returnLocation=$location;
+            }else {
+                $returnLocation=$data['returnLocation'];
+            }
             $returnDate=$data['returnDate'];
+            $session = $request->getSession();
+            $session->set('rentDate', $rentDate);
+            $session->set('returnDate', $returnDate);
+            $session->set('location', $location);
+            $session->set('returnLocation', $returnLocation);
+            $rentDatas=[$location,$rentDate,$returnDate,$minPrice,$maxPrice];
             $cars = $vehicleRepository->findAvailableVehicle($rentDate, $returnDate, $minPrice, $maxPrice, $location, $returnLocation);
             return $this->render('availableVehicles.html.twig', [
                 'cars' => $cars,
-                'startDate' => $rentDate,
-                'endDate' => $returnDate,
+                'rentDatas'=>$rentDatas,
             ]);
         }
         $carSport = $vehicleRepository->findBy(['type' => 'sportive']);

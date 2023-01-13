@@ -144,8 +144,7 @@
                             <span>Search result</span>
                         </h2>
                         <p class="mb-0">
-                            Available vehicle to be picked up the {{ startDate | date("m/d/Y") }} and returned
-                            the {{ endDate | date("m/d/Y") }}
+                            Vehicles available for the  {{ rentDatas.1 | date("m/d/Y") }} to {{ rentDatas.2 | date("m/d/Y") }} period
                         </p>
                     </div>
                 </div>
@@ -155,7 +154,7 @@
                 <div class="element-item">
                     <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="300">
                         <h3 class="item_title mb-0">
-                            <a href="{{ path('app_reservation', { id: car.id })}}">
+                            <a href="{{ path('app_reservation', { id: car.id, rent: rentDatas})}}">
                                 {{ car.brand }} {{ car.model }}
                             </a>
                         </h3>
