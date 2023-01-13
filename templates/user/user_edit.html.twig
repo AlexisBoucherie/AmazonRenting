@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}My profile{% endblock %}
+{% block title %}Edit profile{% endblock %}
 
 {% block body %}
     <!-- main body - start
@@ -136,55 +136,50 @@
 
         <!-- account_section - start
         ================================================== -->
-        <section class="account_section sec_ptb_100 clearfix">
-            <div class="container">
-                <div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
+                <section class="account_section sec_ptb_100 clearfix">
+                    <div class="container">
+                        <div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
 
-                    <div class="col-lg-4 col-md-8 col-sm-10 col-xs-12">
-                        <div class="account_tabs_menu clearfix" data-bg-color="#F2F2F2" data-aos="fade-up"
-                             data-aos-delay="100">
-                            <h2 class="list_title mb_15">Account Details:</h2>
-                            <ul class="ul_li_block nav" role="tablist">
-                                <li>
-                                    <a class="active" data-toggle="tab" href="{{ path('app_user', {'id': user.id }) }}"><i class="fas fa-user"></i>
-                                        {{ user.lastName }} {{ user.firstName }}</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('app_reservation', {'id': user.id}) }}"><i class="fa fa-car"></i>
-                                        My reservation</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
-                        <div class="account_tab_content tab-content">
-                            <div id="admin_tab" class="tab-pane active">
-                                <div class="account_info_list" data-aos="fade-up" data-aos-delay="100">
-                                    <h3 class="list_title mb_30">Account:</h3>
-                                    <ul class="ul_li_block clearfix">
-                                        <li><span>Lastname:</span> {{ user.lastName }}</li>
-                                        <li><span>Firstname:</span> {{ user.firstName }}</li>
-                                        <li><span>E-mail:</span> {{ user.email }}</li>
-                                        <li><span>Phone:</span> {{ user.phoneNumber }}</li>
-                                        <li><span>Address:</span> {{ user.address }}</li>
-                                        <li><span>Zip code:</span> {{ user.zipCode }}</li>
-                                        <li><span>City:</span> {{ user.city }}</li>
+                            <div class="col-lg-4 col-md-8 col-sm-10 col-xs-12">
+                                <div class="account_tabs_menu clearfix" data-bg-color="#F2F2F2" data-aos="fade-up"
+                                     data-aos-delay="100">
+                                    <h2 class="list_title mb_15">Account Details:</h2>
+                                    <ul class="ul_li_block nav" role="tablist">
+                                        <li>
+                                            <a class="active" data-toggle="tab" href="{{ path('app_user', {'id': user.id }) }}"><i class="fas fa-user"></i>
+                                                {{ user.lastName }} {{ user.firstName }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('app_reservation', {'id': user.id}) }}"><i class="fa fa-car"></i>
+                                                My reservation</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                        </li>
                                     </ul>
-                                    <a class="text_btn text-uppercase" href="{{ path('app_user_edit', {'id': user.id}) }}"><span>Edit Account Information</span></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                                <div class="account_tab_content tab-content">
+                                    <div id="admin_tab" class="tab-pane active">
+                                        <div class="account_info_list" data-aos="fade-up" data-aos-delay="100">
+                                            <h3 class="list_title mb_30">Edit:</h3>
+                                            <ul class="ul_li_block clearfix">
+                                                {{ form_start(form) }}
+                                                {{ form_label(form) }}
+                                                {{ form_widget(form) }}
+                                                <button class="btn btn-info btn-lg mt-4">Edit</button>
+                                                {{ form_end(form) }}
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
         <!-- account_section - end
         ================================================== -->
-
-
     </main>
     <!-- main body - end
     ================================================== -->
