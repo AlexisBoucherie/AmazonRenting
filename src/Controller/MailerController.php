@@ -33,9 +33,11 @@ class MailerController extends AbstractController
         $emailCompany = $company->getEmail();
         $text = $_POST['message'];
         $status = $_POST['status'];
+        $emailForm = $_POST['email'];
         $email = (new Email())
-            ->from($emailCompany)
+            ->from($emailForm)
             ->to('admin@amazonrenting.com')
+            ->cc($emailCompany)
             ->subject('Appointment for ' . $status)
             ->text($text)
             ->html('<p>See Twig integration for better HTML integration!</p>');
