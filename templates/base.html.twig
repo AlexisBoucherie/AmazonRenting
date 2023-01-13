@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+          href="{{ asset('/images/logo/favourite_icon.png') }}">
 
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block stylesheets %}
@@ -139,10 +139,10 @@
                                             <h4 class="user_name">Welcome !</h4>
                                         </div>
                                         <ul class="ul_li_block clearfix">
-                                            <li><a href="#!"><i class="fa fa-address-card"></i> Subscribe</a></li>
-                                            <li><a href="#!"><i class="fa fa-sign-in"></i> Login as User</a></li>
-                                            <li><a href="#!"><i class="fa fa-sign-in"></i> Login as Company</a></li>
-                                            <li><a href="#!"><i class="fa fa-sign-in"></i> Login as Amazon Staff</a>
+                                            <li><a href="#!" class="text-dark"><i class="fa fa-address-card text-dark"></i> Subscribe</a></li>
+                                            <li><a href="{{ path('app_user') }}" class="text-dark"><i class="fa fa-sign-in text-dark"></i> Login as User</a></li>
+                                            <li><a href="{{ path('app_company') }}" class="text-dark"><i class="fa fa-sign-in text-dark"></i> Login as Company</a></li>
+                                            <li><a href="/admin" class="text-dark"><i class="fa fa-sign-in text-dark"></i> Login as Amazon Staff</a>
                                             </li>
                                         </ul>
                                     {% endif %}

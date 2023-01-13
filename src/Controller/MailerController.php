@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Company;
 use App\Form\SendEmailType;
+use App\Repository\CompanyRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,17 +13,21 @@ use Symfony\Component\HttpFoundation\Request;
 
 class MailerController extends AbstractController
 {
-    #[Route('/mailer/{id}', name: 'app_mailer', methods: ['GET', 'POST'])]
-    public function index(Company $company): Response
+    #[Route('/mailer', name: 'app_mailer', methods: ['GET', 'POST'])]
+    public function index(CompanyRepository $companyRepository): Response
     {
+        $company = $companyRepository->findOneById(1);
+
         return $this->render('mailer/index.html.twig', [
             'company' => $company,
         ]);
     }
 
-    #[Route('/email/{id}', name: 'app_mailer_send', methods: ['GET', 'POST'])]
-    public function sendEmail(MailerInterface $mailer, Request $request, Company $company): Response
+    #[Route('/email', name: 'app_mailer_send', methods: ['GET', 'POST'])]
+    public function sendEmail(MailerInterface $mailer, Request $request, CompanyRepository $companyRepository): Response
     {
+        $company = $companyRepository->findOneById(1);
+
         $form = $this->createForm(SendEmailType::class);
         $form->handleRequest($request);
         $email = (new Email())
