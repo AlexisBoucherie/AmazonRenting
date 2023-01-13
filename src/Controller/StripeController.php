@@ -20,19 +20,19 @@ class StripeController extends AbstractController
     public function index(Request $request): Response
     {
         $session = $request->getSession();
-        $totalPrice=$session->get('totalPrice');
+        $totalPrice = $session->get('totalPrice');
 
         return $this->render('stripe/index.html.twig', [
             'stripe_key' => $_ENV["STRIPE_KEY"],
-            'totalPrice'=>$totalPrice
+            'totalPrice' => $totalPrice
         ]);
     }
 
     #[Route('/stripe/create-charge', name: 'app_stripe_charge', methods: ['POST'])]
-    public function createCharge(Request $request, EntityManagerInterface $manager,VehicleRepository $vehicleRepository, UserRepository $userRepository): Response
+    public function createCharge(Request $request, EntityManagerInterface $manager, VehicleRepository $vehicleRepository, UserRepository $userRepository): Response
     {
-        $user= $userRepository->findOneBy(['id' => 1]);
-        $session=$request->getSession();
+        $user = $userRepository->findOneBy(['id' => 1]);
+        $session = $request->getSession();
         Stripe\Stripe::setApiKey($_ENV["STRIPE_SECRET"]);
         Stripe\Charge::create([
             "amount" => 5 * 100,
@@ -43,11 +43,11 @@ class StripeController extends AbstractController
         $this->addFlash(
             'success',
             'Payment Successful!'
-);
+        );
         $event = new Event();
         $event->setStatus('rented');
         $event->setPrice($session->get('totalPrice'));
-        $event->setVehicleId($vehicleRepository->findOneBy(['id'=>$session->get('vehicleId')]));
+        $event->setVehicleId($vehicleRepository->findOneBy(['id' => $session->get('vehicleId')]));
         $event->setEndDate($session->get('returnDate'));
         $event->setLicenceNumber($session->get('licenceNumber'));
         $event->setUserId($user);
@@ -58,6 +58,6 @@ class StripeController extends AbstractController
         $manager->persist($event);
         $manager->flush();
         $session->clear();
-return $this->redirectToRoute('app_stripe', [], Response::HTTP_SEE_OTHER);
-}
+        return $this->redirectToRoute('app_stripe', [], Response::HTTP_SEE_OTHER);
+    }
 }
