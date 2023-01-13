@@ -41,6 +41,15 @@
         {#            {{ encore_entry_script_tags('app') }} #}
     {% endblock %}
 </head>
+
+{% for category, messages in app.flashes %}
+{% for message in messages %}
+    <div class="alert alert-{{ category }}">
+        {{ message }}
+    </div>
+{% endfor %}
+{% endfor %}
+
 <body>
 <!-- backtotop - start -->
 <div id="thetop"></div>
