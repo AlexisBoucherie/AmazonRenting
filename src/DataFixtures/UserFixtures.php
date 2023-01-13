@@ -39,7 +39,7 @@ class UserFixtures extends Fixture
         $user->setLastName('Amazon');
         $user->setPhoneNumber($faker->phoneNumber());
         $user->setCity($faker->city);
-        $user->setRoles('ROLE_SUPERADMIN');
+        $user->setRoles('ROLE_ADMIN');
         $user->setEmail($faker->email());
         $user->setPassword(password_hash( '1234', PASSWORD_DEFAULT));
         $user->setAddress($faker->streetAddress());
