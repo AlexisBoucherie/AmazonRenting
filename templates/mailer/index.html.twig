@@ -143,7 +143,7 @@
                         </div>
                     {% endfor %}
                 {% endfor %}
-                <form id="contact_form" action="{{ path('app_mailer_send') }}" method="POST">
+                <form id="contact_form" action="{{ path('app_mailer_send', {'id': company.id}) }}" method="POST">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="form_item" data-aos="fade-up" data-aos-delay="100">
