@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact Us{% endblock %}
+{% block title %}My company{% endblock %}
 
 {% block body %}
     <!-- main body - start
-    ================================================== -->
+            ================================================== -->
     <main>
 
 
@@ -17,8 +17,8 @@
                 <div class="about_content mb_60">
                     <div class="brand_logo mb_15">
                         <a href="index.html">
-                            <img src="assets/images/logo/logo_01_1x.png" srcset="assets/images/logo/logo_01_2x.png 2x"
-                                 alt="logo_not_found">
+                            <img src="{{ asset('images/logo/logo_01_1x.png') }}"
+                                 srcset="assets/images/logo/logo_01_2x.png 2x" alt="logo_not_found">
                         </a>
                     </div>
                     <p class="mb-0">
@@ -34,7 +34,6 @@
                         <li class="active dropdown">
                             <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
                             <ul class="dropdown-menu">
-                                <li><a href="index_1.html">Home Page V.1</a></li>
                                 <li><a href="index_2.html">Home Page V.2</a></li>
                             </ul>
                         </li>
@@ -115,86 +114,113 @@
         <!-- breadcrumb_section - start
         ================================================== -->
         <section class="breadcrumb_section text-center clearfix">
-            <div class="page_title_area has_overlay d-flex align-items-center clearfix">
+            <div class="page_title_area has_overlay d-flex align-items-center clearfix"
+                 data-bg-image="assets/images/breadcrumb/bg_10.jpg">
                 <div class="overlay"></div>
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
-                    <h1 class="page_title text-white mb-0">{{ company.name }}</h1>
+                    <h1 class="page_title text-white mb-0">My company</h1>
+                </div>
+            </div>
+            <div class="breadcrumb_nav clearfix" data-bg-color="#F2F2F2">
+                <div class="container">
+                    <ul class="ul_li clearfix">
+                        <li><a href="{{ path('app_home') }}">Home</a></li>
+                        <li>Company</li>
+                    </ul>
                 </div>
             </div>
         </section>
         <!-- breadcrumb_section - end
         ================================================== -->
 
-        <!-- contact_form_section - start
+
+        <!-- account_section - start
         ================================================== -->
-
-        <section class="contact_form_section sec_ptb_100 clearfix">
+        <section class="account_section sec_ptb_100 clearfix" style="padding-top: 20px">
             <div class="container">
-
-                <div class="section_title mb_60 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <h2 class="title_text mb-0">
-                        <span>Add/Recover Vehicle</span>
-                    </h2>
+                <div style="margin-left: 400px; margin-bottom: 50px; width: 400px; text-align: center">
+                    <h3>To add or remove a car</h3>
+                    <a class="btn btn-info" href="{{ path('app_mailer', {'id': company.id}) }}">CONTACT US</a>
                 </div>
-                {% for category, messages in app.flashes %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ category }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endfor %}
-                <form id="contact_form" action="{{ path('app_mailer_send', {'id': company.id}) }}" method="POST">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="form_item" data-aos="fade-up" data-aos-delay="100">
-                                <input type="text" name="name" placeholder="{{ company.name }}">
-                            </div>
-                        </div>
+                <div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
 
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="form_item" data-aos="fade-up" data-aos-delay="200">
-                                <input type="text" name="siret" placeholder="{{ company.siret }}">
-                            </div>
+                    <div class="col-lg-4 col-md-8 col-sm-10 col-xs-12">
+                        <div class="account_tabs_menu clearfix" data-bg-color="#F2F2F2" data-aos="fade-up"
+                             data-aos-delay="100">
+                            <h2 class="list_title mb_15">Account Details:</h2>
+                            <ul class="ul_li_block nav" role="tablist">
+                                <li>
+                                    <a class="active" data-toggle="tab" href="#"><i class="fas fa-user"></i>
+                                        {{ company.name }}</a>
+                                </li>
+                                <li>
+                                    <a href="#company-rental-car"><i class="fa fa-car"></i>
+                                        My rental cars</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('app_mailer', {'id': company.id}) }}"><i class="fa fa-envelope"></i>
+                                        Contact</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                </li>
+                            </ul>
                         </div>
-
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="form_item" data-aos="fade-up" data-aos-delay="300">
-                                <div style="margin-top: 30px"></div>
-                                <input type="email" name="email" placeholder="Email">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <label for="status"></label>
-                            <div class="form_item" data-aos="fade-up" data-aos-delay="400">
-                                <select name="status" id="status">
-                                    <option value="add">Add Vehicle</option>
-                                    <option value="recover">Recover Vehicle</option>
-                                </select>
-                                
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                        <div class="account_tab_content tab-content">
+                            <div id="admin_tab" class="tab-pane active">
+                                <div class="account_info_list" data-aos="fade-up" data-aos-delay="100">
+                                    <h3 class="list_title mb_30">Account:</h3>
+                                    <ul class="ul_li_block clearfix">
+                                        <li><span>Name:</span> {{ company.name }}</li>
+                                        <li><span>Siret:</span> {{ company.siret }}</li>
+                                        <li><span>E-mail:</span> {{ company.email }}</li>
+                                        <li><span>Address:</span> {{ company.address }}</li>
+                                        <li><span>Zip code:</span> {{ company.zipCode }}</li>
+                                        <li><span>City:</span> {{ company.city }}</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form_item" data-aos="fade-up" data-aos-delay="500">
-                        <label for="message"></label>
-                        <textarea style="margin-top: 60px" name="message" placeholder="Hello,
-I want to add/recover a vehicle.
-Reference Car
-Can you give me appointment ?
-Have a good day."></textarea>
-                    </div>
-                    <div class="abtn_wrap text-center clearfix" data-aos="fade-up" data-aos-delay="600">
-                        <button type="submit" value="submit" class="custom_btn btn_width bg_default_red text-uppercase">
-                            Send a Message
-                        </button>
-                    </div>
-                </form>
+                    <div class="container mt-5">
+                        <h2 class="list_title mb_15">My rental cars</h2>
 
+                        <div id="company-rental-car" class="feature_vehicle_filter element-grid clearfix">
+                            {% for car in cars %}
+                                <div class="element-item {{ car.type }}" data-category="{{ car.type }}">
+                                    <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="100">
+                                        <h3 class="item_title mb-0">
+                                            <a href="#!">
+                                                {{ car.brand|capitalize }} {{ car.model|capitalize }}
+                                            </a>
+                                        </h3>
+                                        <div class="item_image position-relative">
+                                            <a class="image_wrap" href="#!">
+                                                <img src="{{ asset('images/upload_vehicle/'~car.photo) }}"
+                                                     alt="image_not_found" style="width: 345px; height: 260px ">
+                                            </a>
+                                        </div>
+                                        <ul class="info_list ul_li_center clearfix">
+                                            <li>{{ car.type|capitalize }}</li>
+                                            <li>{{ car.transmission|capitalize }}</li>
+                                            <li>{{ car.numberOfSeats }} PAX</li>
+                                            <li>{{ car.energy|capitalize }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
-        <!-- contact_form_section - end
+        <!-- account_section - end
         ================================================== -->
-        
+
+
     </main>
     <!-- main body - end
     ================================================== -->
