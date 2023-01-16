@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Payement{% endblock %}
+{% block title %}Payment{% endblock %}
 
 {% block body %}
     <section style="margin: 200px">
@@ -16,10 +16,14 @@
                         {% endfor %}
                         <div class="d-flex justify-content-center">
                             {% if totalPrice is null %}
-                                <a href="{{ path('app_home') }}">
-                                    <button type="button" class="custom_btn bg_default_red text-uppercase">
-                                        Return to home</button>
-                                </a>
+                                <div class="d-flex flex-column text-center">
+                                    <h4 class="alert-success">Payment successful</h4>
+                                    <a href="{{ path('app_home') }}">
+                                        <button type="button" class="custom_btn bg_default_red text-uppercase">
+                                            Return to home</button>
+                                    </a>
+                                </div>
+
                             {% else %}
                                 <h4>Total price : {{ totalPrice }}</h4>
                             {% endif %}
